@@ -1,15 +1,122 @@
-<body>
+<app-header></app-header>
 <div class="container">
-	<p class="lead">Have a good day!</p>
-	<div class="header-bar">
-		<h1 class="logo">F</h1>
-		<ul class="slider-menu">
-			<li routerLink="/profile">Profile</li>
-			<li>About</li>
-			<li>Services</li>
-		</ul>
+	<!--left side code starts-->
+	<div class="left">
+		<!--profile text and image code starts-->
+		<div class="profileTxt">
+			<div class="Imgbox">
+				<img src="Images and Icons/SSSSSSSS222.jpg">
+			</div>
+			<h3>Faisal Khan<br><span>Software Engineer</span></h3>
+		</div>
+		<!--profile text and image code ends-->
+
+		<!--contact info section code starts-->
+		<div class="contactInfo">
+			<h4 class="title">Contact Info.</h4>
+			<ul>
+				<li>
+					<span class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+					<span class="text">faisalkhan91@gmail.com</span>
+				</li>
+				<li>
+					<span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+					<span class="text">+1 (475)-355-7575</span>
+				</li>
+				<li>
+					<span class="icon"><i class="fa fa-globe" aria-hidden="true"></i></span>
+					<span class="text">www.mywebsite.com</span>
+				</li>
+				<li>
+					<span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+					<span class="text" style="text-decoration: none !important;"><a style="color: #fff;"
+							href="https://www.linkedin.com/in/smrita-ghosh-67b4591b5/">LinkedIn/me</a></span>
+				</li>
+				<li>
+					<span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+					<span class="text">New Haven, CT, USA</span>
+				</li>
+			</ul>
+		</div>
+		<!--contact info section code ends-->
+
+		<!--Education details part starts-->
+		<div class="contactInfo education">
+			<h4 class="title">Education</h4>
+			<ul>
+				<li>
+					<h6>Year of Passing- 2009</h6>
+					<h5>High School</h5>
+					<h5>The Indian School, Isa Town, Bahrain</h5>
+				</li>
+				<li>
+					<h6>Year of Passing- 2013</h6>
+					<h5>Bachelor of Science, Electrical Engineering</h5>
+					<h5>VIT, Maharashtra, India</h5>
+				</li>
+				<li>
+					<h6>Year of Passing- 2019</h6>
+					<h5>Master of Science, Computer Science</h5>
+					<h5>Univerity of New Haven, CT, USA</h5>
+				</li>
+			</ul>
+		</div>
+		<!--Education details part starts-->
+
+		<!--Communication language part starts-->
+		<div class="contactInfo language">
+			<h4 class="title">Languages</h4>
+			<ul>
+				<li><span class="text">English</span>
+					<span class="percent">
+						<div style="width: 90%;"></div>
+					</span>
+				</li>
+				<li>
+					<span class="text">Bengali</span>
+					<span class="percent">
+						<div style="width: 100%;"></div>
+					</span>
+				</li>
+				<li>
+					<span class="text">Hindi</span>
+					<span class="percent">
+						<div style="width: 80%;"></div>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<!--Communication language part ends-->
+	</div>
+	<!--left side code ends-->
+
+	<!--Right side code starts-->
+	<div class="right">
+		<!-- TODO: Improve/Customize this UI using CSS
+            Use the following links
+            https://v14.material.angular.io/components/select/overview
+            https://material.angular.io/components/select/overview -->
+		<div class="profile brown highlightTextOut">
+			<div class="dropdown" *ngIf="isSmallScreen">
+				<mat-form-field appearance="fill">
+					<mat-label>Profile Navigation</mat-label>
+					<mat-select>
+						<mat-option *ngFor="let nav of navigationLinks" [value]="nav.value"
+							(click)="onNavClick(nav.value)">
+							{{nav.viewValue}}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+			<div class="profile_nav_list" *ngIf="!isSmallScreen">
+				<a class="profile_nav" (click)="onNavClick('overview')" alt="Overview">Overview</a>
+				<a class="profile_nav" (click)="onNavClick('experience')" alt="Experience">Experience</a>
+				<a class="profile_nav" (click)="onNavClick('skills')" alt="Skills">Skills</a>
+				<a class="profile_nav" (click)="onNavClick('projects')" alt="Projects">Projects</a>
+				<a class="profile_nav" (click)="onNavClick('achievements')" alt="Achievements">Achievements</a>
+				<a class="profile_nav" (click)="onNavClick('interests')" alt="Interests">Interests</a>
+			</div>
+		</div>
+		<router-outlet></router-outlet>
 	</div>
 </div>
-
-<p class="aeu-signature">Hello, I am excited to see you here!</p>
-</body>

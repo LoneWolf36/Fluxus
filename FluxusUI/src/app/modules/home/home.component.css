@@ -19,14 +19,16 @@ body {
 		rgb(143, 89, 168)
 	);
 }
-.container {
+
+/* Don't use same css names everywhere, be specific, this could be homeContainer */
+/* .container {
 	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	color: #fff;
-}
+} */
 .lead {
 	font-family: "Quicksand";
 }
